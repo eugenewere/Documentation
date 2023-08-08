@@ -1,0 +1,4 @@
+toignore.txt
+images
+./images/*
+images/*
