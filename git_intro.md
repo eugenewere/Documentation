@@ -55,18 +55,54 @@ Cloning specific branch by using **-b [branch-name]**
 
 ### STATUS 
 
-Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git
+**git status** - Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git
 
 **-s, --short**
 
 Give the output in the short-format.
 
+    git status -s
+
 **-b, --branch**
 
 Show the branch and tracking info even in short-format.
+    
+    git status -b master
+
+### COMMIT
+
+**git commit** - Create a new commit containing the current contents of the index and the given log message describing the changes. The new commit is a direct child of HEAD, usually the tip of the current branch, and the branch is updated to point to it
+
+**-m [msg] --message=[msg]**
+Use the given <msg> as the commit message. If multiple -m options are given, their values are concatenated as separate paragraphs.
+
+    git commit -m "initial commit"
+
+**--amend**
+
+Replace the tip of the current branch by creating a new commit
+
+     git commit --amend
+
+### RESET
+
+**git-reset** - Reset current HEAD to the specified state
+
+**git reset [mode] [commit]**
+This form resets the current branch head to <commit> and possibly updates the index (resetting it to the tree of <commit>) and the working tree depending on <mode>. Before the operation, ORIG_HEAD is set to the tip of the current branch. 
+
+- **--soft**
+
+    Does not touch the index file or the working tree at all (but resets the head to <commit>, just like all modes do). This leaves all your changed files "Changes to be committed", as git status would put it.
+
+- **--mixed**
+
+    Resets the index but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the default action.
 
 
+- **--hard**
 
+    Resets the index and working tree. Any changes to tracked files in the working tree since <commit> are discarded. Any untracked files or directories in the way of writing any tracked files are simply deleted.
 
 
 
