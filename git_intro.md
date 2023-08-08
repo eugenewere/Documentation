@@ -1,6 +1,9 @@
 # GIT
 
 Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
+[Reference](https://git-scm.com/docs) 
+
+
 #### OPTIONS
 
 **-v,--version** 
@@ -169,3 +172,68 @@ Specifying -b causes a new branch to be created as if git-branch[1] were called 
 To prepare for working on <branch>, switch to it by updating the index and the files in the working tree, and by pointing HEAD at the branch. 
 
     git checkout features
+
+### LOGS
+
+**git-log** - Show commit logs
+
+    git log
+
+
+### FETCH
+
+**git-fetch** - Download objects and refs from another repository
+
+**--all**
+
+Fetch all remotes.
+
+    git fetch --all
+
+**-f,--force**
+
+When git fetch is used with <src>:<dst> refspec it may refuse to update the local branch as discussed in the <refspec> part below. 
+
+    git fetch --force
+
+
+### PULL
+
+**git-pull** - Fetch from and integrate with another repository or a local branch
+
+    git pull [<options>] [<repository>]
+
+
+### PUSH
+
+**git-push** - Update remote refs along with associated objects
+
+    git push
+
+**--branches** Push all branches 
+
+    git push --branches
+
+**-f, --force**
+
+Usually, the command refuses to update a remote ref that is not an ancestor of the local ref used to overwrite it.
+
+    git push -f
+
+### REMOTE
+
+git-remote - Manage set of tracked repositories
+
+**add** Add a remote named <name> for the repository at <URL>
+
+    git remote add origin git@github.com:eugenewere/Documentation.git
+
+
+**set-url** Changes URLs for the remote. Sets first URL for remote [name] that matches regex
+
+    git remote set-url origin git@github.com:eugenewere/Documentation.git
+
+**get-url**  Retrieves the URLs for a remote
+
+    git remote get-url [name]
+    
