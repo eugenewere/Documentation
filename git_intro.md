@@ -235,5 +235,10 @@ git-remote - Manage set of tracked repositories
 
 **get-url**  Retrieves the URLs for a remote
 
-    git remote get-url [name]
+    git remote get-url [originname]
     
+**show** 
+
+Gives some information about the remote <name>.
+
+    git remote show origin
