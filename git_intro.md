@@ -104,5 +104,68 @@ This form resets the current branch head to <commit> and possibly updates the in
 
     Resets the index and working tree. Any changes to tracked files in the working tree since <commit> are discarded. Any untracked files or directories in the way of writing any tracked files are simply deleted.
 
+- **--merge**
+
+    Resets the index and updates the files in the working tree that are different between <commit> and HEAD, but keeps those which are different between the index and working tree (i.e. which have changes which have not been added). If a file that is different between <commit> and the index has unstaged changes, reset is aborted.
 
 
+
+- **--keep**
+
+    Resets index entries and updates files in the working tree that are different between <commit> and HEAD. If a file that is different between <commit> and HEAD has local changes, reset is aborted.
+
+### RM
+
+**git-rm** - Remove files from the working tree and from the index
+
+    git rm main.py
+
+**-f, --force**
+
+Override the up-to-date check.
+
+    git rm -f main.py
+
+### MV
+
+**git-mv** - Move or rename a file, a directory, or a symlink
+
+    git mv [<options>] <source>…​ <destination>
+
+**-f,--force**
+
+Force renaming or moving of a file even if the <destination> exists.
+
+### BRANCH 
+
+**git-branch** - List, create, or delete branches
+
+    git branch
+
+**-d, --delete**
+
+Delete a branch. The branch must be fully merged in its upstream branch.
+
+    git branch -d features
+
+**-D**
+
+Shortcut for --delete --force.
+
+    git branch -D features
+
+### CHECKOUT
+
+**git-checkout** - Switch branches or restore working tree files
+
+**git checkout -b|-B <new-branch>**
+
+Specifying -b causes a new branch to be created as if git-branch[1] were called and then checked out.
+
+    git checkout -b features
+
+**git checkout [branch]**
+
+To prepare for working on <branch>, switch to it by updating the index and the files in the working tree, and by pointing HEAD at the branch. 
+
+    git checkout features
