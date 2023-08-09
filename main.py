@@ -18,3 +18,4 @@ class GitTutorial:
 # git branch -M main
 # git remote add origin git@github.com:eugenewere/git_test_1.git
 # git push -u origin main
+# git pull
