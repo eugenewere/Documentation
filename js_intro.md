@@ -781,3 +781,115 @@ cars[0]= "Saab";
 cars[1]= "Volvo";
 cars[2]= "BMW";
 ```
+
+### Accessing Array Elements
+
+You access an array element by referring to the index number:
+
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0]; // first
+let car = cars[car.length - 1]; // last
+```
+
+### Changing an Array Element
+
+This statement changes the value of the first element in cars:
+
+```javascript
+const cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Opel";
+```
+
+### Array length Property
+
+The length property of an array returns the length of an array (the number of array elements).
+
+```javascript
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.length;
+```
+
+
+### Looping Array
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+```
+
+or 
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+```
+
+### Adding Array Elements
+
+
+```javascript
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+```
+
+## Array Methods
+
+```
+Array length
+Array toString() // he JavaScript method toString() converts an array to a string of (comma separated) array values.
+Array pop() // method removes the last element from an array:
+Array push() //The push() method adds a new element to an array (at the end):
+Array shift() //method removes the first array element and "shifts" all other elements to a lower index.
+Array unshift()  // the unshift(*) method adds a new element to an array (at the beginning), and "unshifts" older elements:
+Array join() //  method also joins all array elements into a string.
+Array concat() // the concat() method creates a new array by merging (concatenating) existing arrays:
+Array sort() // the sort() method sorts an array alphabetically:
+Array reverse() // You can use it to sort an array in descending order:
+```
+
+## Date Objects
+
+Date objects are created with the new Date() constructor.
+
+There are 9 ways to create a new date object:
+
+```javascript
+
+new Date()
+new Date(date string)
+
+new Date(year,month)
+new Date(year,month,day)
+new Date(year,month,day,hours)
+new Date(year,month,day,hours,minutes)
+new Date(year,month,day,hours,minutes,seconds)
+new Date(year,month,day,hours,minutes,seconds,ms)
+
+new Date(milliseconds)
+```
+
+
+
+
+```javascript
+const d = new Date("October 13, 2014 11:13:00");
+const d = new Date("2022-03-25");
+const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+const d = new Date(100000000000); // 01 January 1970 plus 100 000 000 000 milliseconds is:
+```
+
