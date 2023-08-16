@@ -752,7 +752,7 @@ parseInt("years 10"); // NaN
 
 ```
 
-parseFloat
+### parseFloat
 
 parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
 
@@ -893,3 +893,244 @@ const d = new Date(2018, 11, 24, 10, 33, 30, 0);
 const d = new Date(100000000000); // 01 January 1970 plus 100 000 000 000 milliseconds is:
 ```
 
+
+## Comparison and Logical Operators
+
+Comparison operators are used in logical statements to determine equality or difference between variables or values
+
+Lets say 
+```javascript 
+x = 5
+```
+
+```javascript
+==	          equal to             x == 8
+===	    equal value and equal type	    x === 5
+!=	        not equal x != 8
+!== 	not equal value or not equal type	x !== 5
+>	         greater than	         x > 8
+<	        less than	             x < 8
+>=	     greater than or equal to	  x >= 8
+<=	     less than or equal to	      x <= 8
+```
+
+### How Can it be Used
+Comparison operators can be used in conditional statements to compare values and take action depending on the result:
+
+
+```javascript
+if (age < 18) text = "Too young to buy alcohol";
+```
+
+###  Logical Operators
+
+Logical operators are used to determine the logic between variables or values.
+
+Given that x = 6 and y = 3, the table below explains the logical operators:
+
+
+```javascript
+&&	and	(x < 10 && y > 1) is true	
+||	or	(x == 5 || y == 5) is false	
+!	not	!(x == y) is true
+```
+
+
+## JavaScript if, else, and else if
+
+Conditional statements are used to perform different actions based on different conditions.
+
+### Conditional Statements
+
+Very often when you write code, you want to perform different actions for different decisions.
+
+You can use conditional statements in your code to do this.
+
+In JavaScript we have the following conditional statements:
+
+Use **if** to specify a block of code to be executed, if a specified condition is true
+Use **else** to specify a block of code to be executed, if the same condition is false
+Use **else if**  to specify a new condition to test, if the first condition is false
+Use **switch** to specify many alternative blocks of code to be executed
+
+### The if Statement
+
+Use the if statement to specify a block of JavaScript code to be executed if a condition is true.
+
+```javascript
+if (condition) {
+  //  block of code to be executed if the condition is true
+}
+```
+
+
+example
+```javascript
+let hour = 16;
+if (hour < 18) {
+  greeting = "Good day";
+}
+```
+
+### The else Statement
+
+Use the else statement to specify a block of code to be executed if the condition is false.
+
+
+```javascript
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+```
+
+example
+
+```javascript
+let hour = 26;
+if (hour < 18) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+```
+
+### The else if Statement
+
+Use the else if statement to specify a new condition if the first condition is false.
+
+```javascript
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+
+example
+
+```javascript
+let time = 15;
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+```
+
+## JavaScript Switch Statement
+
+The switch statement is used to perform different actions based on different conditions.
+
+Use the switch statement to select one of many code blocks to be executed.
+
+```javascript
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
+
+example
+
+```javascript
+let day_of_week = 5;
+switch (day_of_week) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
+```
+### The break Keyword
+
+When JavaScript reaches a break keyword, it breaks out of the switch block.
+
+This will stop the execution inside the switch block.
+
+It is not necessary to break the last case in a switch block. The block breaks (ends) there anyway.
+
+
+### The default Keyword
+
+The default keyword specifies the code to run if there is no case match:
+
+```javascript
+let day = 4;
+switch (day) {
+  case 6:
+    text = "Today is Saturday";
+    break;
+  case 0:
+    text = "Today is Sunday";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+```
+
+### Common Code Blocks
+
+Sometimes you will want different switch cases to use the same code.
+
+In this example case 4 and 5 share the same code block, and 0 and 6 share another code block:
+
+```javascript
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Soon it is Weekend";
+    break;
+  case 0:
+  case 6:
+    text = "It is Weekend";
+    break;
+  default:
+    text = "Looking forward to the Weekend";
+}
+```
+
+### JavaScript For Loop
+
+Loops can execute a block of code a number of times.
+
+```javascript
+for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}
+```
+
+example
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+```
