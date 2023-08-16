@@ -1134,3 +1134,195 @@ for (let i = 0; i < 5; i++) {
   text += "The number is " + i + "<br>";
 }
 ```
+
+
+
+## Regular Expression
+
+### Using String search()
+
+Use a regular expression to do a case-insensitive search for "w3schools" in a string:
+
+```javascript
+let text = "Visit W3Schools";
+let n = text.search(/w3schools/i);  // 6
+```
+
+### Use String replace()
+
+```javascript
+let text = "Visit Microsoft!";
+let result = text.replace(/microsoft/i, "W3Schools"); // Visit W3Schools!
+```
+
+### Regular Expression Modifiers
+
+| Modifier   |  Description |
+|------------|  ----------  |
+| i          |	Perform case-insensitive matching |	
+| g          |	Perform a global match (find all matches rather than stopping after the first match) |	
+| m          |	Perform multiline matching |
+
+## JavaScript JSON
+
+JSON is a format for storing and transporting data.
+
+JSON is often used when data is sent from a server to a web page.
+
+JSON stands for JavaScript Object Notation
+
+```json
+{
+    "employees":[
+      {"firstName":"John", "lastName":"Doe"},
+      {"firstName":"Anna", "lastName":"Smith"},
+      {"firstName":"Peter", "lastName":"Jones"}
+    ]
+}
+
+```
+
+### JSON Objects
+JSON objects are written inside curly braces.
+
+Just like in JavaScript, objects can contain multiple name/value pairs:
+```json
+{"firstName":"John", "lastName":"Doe"}
+```
+
+### Converting a JSON Text to a JavaScript Object
+
+A common use of JSON is to read data from a web server, and display the data in a web page.
+
+For simplicity, this can be demonstrated using a string as input.
+
+First, create a JavaScript string containing JSON syntax:
+
+
+```javascript
+let text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+```
+
+Then, use the JavaScript built-in function JSON.parse() to convert the string into a JavaScript object:
+
+```javascript
+const obj = JSON.parse(text);
+```
+
+```json
+{
+  "employees": [
+    {
+        "firstName": "John",
+        "lastName": "Doe"
+    },
+    {
+        "firstName": "Anna",
+        "lastName": "Smith"
+    },
+    {
+        "firstName": "Peter",
+        "lastName": "Jones"
+    }
+]
+}
+```
+### stringify 
+
+A common use of JSON is to exchange data to/from a web server.
+
+When sending data to a web server, the data has to be a string.
+
+```javascript
+const obj = {name: "John", age: 30, city: "New York"};
+const myJSON = JSON.stringify(obj); // {"name":"John","age":30,"city":"New York"}
+```
+
+## JavaScript Classes
+Use the keyword class to create a class.
+
+Always add a method named constructor():
+
+```javascript
+class ClassName {
+  constructor() { ... }
+}
+```
+
+example
+
+```javascript
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+```
+The example above creates a class named "Car".
+
+The class has two initial properties: "name" and "year
+
+
+### Using a Class
+
+When you have a class, you can use the class to create objects:
+
+
+```javascript
+const myCar1 = new Car("Ford", 2014);
+const myCar2 = new Car("Audi", 2019)
+```
+
+
+### The Constructor Method
+The constructor method is a special method:
+
+- It has to have the exact name "constructor"
+- It is executed automatically when a new object is created
+- It is used to initialize object properties
+
+If you do not define a constructor method, JavaScript will add an empty constructor method.
+
+### Class Methods
+
+Class methods are created with the same syntax as object methods.
+
+Use the keyword class to create a class.
+
+Always add a constructor() method.
+
+Then add any number of methods.
+
+```javascript
+
+class ClassName {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+```
+
+example
+
+```javascript
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    const date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+const myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+```
