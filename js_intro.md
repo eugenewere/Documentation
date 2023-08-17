@@ -891,6 +891,20 @@ const d = new Date("October 13, 2014 11:13:00");
 const d = new Date("2022-03-25");
 const d = new Date(2018, 11, 24, 10, 33, 30, 0);
 const d = new Date(100000000000); // 01 January 1970 plus 100 000 000 000 milliseconds is:
+
+let date =  new Date()
+// console.log(date.getFullYear())
+// console.log(date.getMonth())
+// console.log(date.getDate())
+// console.log(date.getHours())
+// console.log(date.getMinutes())
+// console.log(date.getSeconds())
+// console.log(date.getMilliseconds())
+console.log(date.getTime())  // Since jan 1, 1970
+console.log(new Date("2022/05/05").getDay()) 
+var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+console.log(days[new Date("2022/05/05").getDay()])
+console.log(new Date(33333333333).getFullYear())
 ```
 
 
@@ -1325,4 +1339,219 @@ class Car {
 const myCar = new Car("Ford", 2014);
 document.getElementById("demo").innerHTML =
 "My car is " + myCar.age() + " years old.";
+```
+
+
+## HTML DOM
+
+### Finding HTML Elements
+| Method | 	Description                                  |
+| ------ |-----------------------------------------------|
+| document.getElementById(id) | 	Find an **element** by element id            |
+| document.getElementsByTagName(name) | 	Find **elements[collections]** by tag name   |
+| document.getElementsByClassName(name) | 	Find **elements[collections]** by class name |
+
+
+### Changing HTML Elements
+
+| Property |	Description |
+| ------ | ------------ |
+| element.innerHTML =  new html content |	Change the inner HTML of an element |
+| element.attribute = new value |	Change the attribute value of an HTML element |
+| element.style.property = new style |	Change the style of an HTML element |
+| Method |	Description |
+| element.setAttribute(attribute, value) |	Change the attribute value of an HTML element |
+
+
+### Adding and Deleting Elements
+
+| Method| 	Description |
+| ------ | ------------ |
+| document.createElement(element)| 	Create an HTML element |
+| document.removeChild(element)| 	Remove an HTML element |
+| document.appendChild(element)| 	Add an HTML element |
+| document.replaceChild(new, old)| 	Replace an HTML element |
+| document.write(text)| 	Write into the HTML output stream |
+
+### Events Handlers
+
+| Method |	Description |
+| ------ | ------------ |
+| document.getElementById(id).onclick = function(){code} |	Adding event handler code to an onclick event |
+
+### Changing HTML Style
+
+To change the style of an HTML element, use this syntax:
+
+```javascript
+document.getElementById(id).style.property = new style
+```
+The following example changes the style of a <p> element:
+
+``` javascript
+<html>
+<body>
+
+<p id="p2">Hello World!</p>
+
+<script>
+document.getElementById("p2").style.color = "blue";
+</script>
+
+</body>
+</html>
+
+```
+
+## HTML DOM Events
+
+HTML DOM allows JavaScript to react to HTML events:
+
+### Reacting to Events
+
+A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.
+
+To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:
+
+```html
+onclick=JavaScript
+```
+
+Examples of HTML events:
+
+- When a user clicks the mouse
+- When a web page has loaded
+- When an image has been loaded
+- When the mouse moves over an element
+- When an input field is changed
+- When an HTML form is submitted
+- When a user strokes a key
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+
+</body>
+</html>
+```
+In this example, a function is called from the event handler:
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 onclick="changeText(this)">Click on this text!</h1>
+
+<script>
+function changeText(id) {
+  id.innerHTML = "Ooops!";
+}
+</script>
+
+</body>
+</html>
+```
+
+
+### Assign Events Using the HTML DOM
+
+```html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML Events</h2>
+<p>Click "Try it" to execute the displayDate() function.</p>
+
+<button id="myBtn">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("myBtn").onclick = displayDate;
+
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+</script>
+
+</body>
+</html> 
+```
+
+Check all possible events [list of events](https://www.tutorialspoint.com/javascript/javascript_events.htm)
+
+
+## HTML DOM EventListener
+
+### The addEventListener() method
+
+Add an event listener that fires when a user clicks a button:
+
+
+```javascript
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+```
+
+The **addEventListener()** method attaches an event handler to the specified element.
+
+The **addEventListener()** method attaches an event handler to an element without overwriting existing event handlers.
+
+You can add many event handlers to one element.
+
+You can add many event handlers of the same type to one element, i.e two "click" events.
+
+You can add event listeners to any DOM object not only HTML elements. i.e the window object.
+
+The **addEventListener()** method makes it easier to control how the event reacts to bubbling.
+
+When using the **addEventListener()** method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup.
+
+You can easily remove an event listener by using the **removeEventListener()** method.
+
+
+### Add an Event Handler to an Element
+
+```javascript
+
+let element = document.getElementById("myBtn");
+element.addEventListener("click", function(){ alert("Hello World!"); });
+```
+OR
+```javascript
+let element = document.getElementById("myBtn");
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+  alert ("Hello World!");
+}
+
+```
+
+### Add Many Event Handlers to the Same Element
+
+The addEventListener() method allows you to add many events to the same element, without overwriting existing event
+
+```javascript
+
+element.addEventListener("click", myFunction);
+element.addEventListener("click", mySecondFunction);
+// also diffrent event
+element.addEventListener("mouseover", myFunction);
+element.addEventListener("click", mySecondFunction);
+element.addEventListener("mouseout", myThirdFunction);
+```
+
+### The removeEventListener() method
+
+The removeEventListener() method removes event handlers that have been attached with the addEventListener() method:
+
+```javascript
+element.removeEventListener("mousemove", myFunction);
 ```
